@@ -29,7 +29,7 @@ type Props = {
 
 function CategoriesSelector({ setClicked, clicked }: Props) {
   return (
-    <div className="absolute -bottom-16 left-[30%] flex space-x-20">
+    <div className="absolute z-50 -bottom-16 left-[30%] flex space-x-20">
       <div
       className="cursor-pointer"
         onClick={() => {
