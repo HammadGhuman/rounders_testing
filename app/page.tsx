@@ -26,47 +26,47 @@ export default function Home() {
   });
   return (
     <div>
-      <main>
+      <main className="">
         {/* Navbar */}
         <Navbar />
         <OutlineText label="Burger" />
         {/* Outline Label Burger */}
-        <div className="flex flex-row justify-around">
+        <div className="flex flex-row relative justify-around md:mt-0">
           <div className="relative w-full ">
             {/* hero text */}
-            <div className="absolute  top-20 left-14 font-MetropolisRegular">
-              <div className=" text-mustard text-[15rem] font-normal font-Hevojniwal capitalize">
+            <div className="absolute lg:top-20 lg:left-14 top-16 left-7 font-MetropolisRegular">
+              <div className=" text-mustard md:text-[15rem] text-9xl font-normal font-Hevojniwal capitalize">
                 Burger
               </div>
-              <div className="-mt-9 text-white text-6xl font-normal">
+              <div className="lg:-mt-9 text-white text-2xl md:text-6xl font-normal">
                 Life tastes better
               </div>
               {/* button */}
-              <div className="cursor-pointer bg-mustard rounded-3xl w-5/12 px-6 py-2.5 mt-8">
-                <p className="select-none uppercase text-lg font-semibold text-center  text-charcoal">
+              <div className="cursor-pointer bg-mustard rounded-3xl md:w-5/12 px-6 py-2.5 mt-8">
+                <p className="select-none text-lg font-semibold text-center  text-charcoal">
                   Order Online
                 </p>
               </div>
             </div>
           </div>
           {/* Hero burger Image */}
-          <div className="w-full z-40">
+          <div className="w-full absolute lg:static z-40 left-52">
             <Image
-              className="w-[47.5rem] h-[37.25rem]"
+              className="md:w-[47.5rem] md:h-[37.25rem] h-72 w-96"
               src={heroBurger}
               alt="herp image"
             />
           </div>
         </div>
         {/* Outline Label Sandwich */}
-        <div className="overflow-hidden -mt-32  -z-10">
-          <h1 className="label text-ellipsis  select-none text-[13rem] uppercase">
+        <div className="overflow-hidden -mt-32 absolute lg:static top-[30rem]">
+          <h1 className="label text-ellipsis  select-none md:text-[13rem] text-7xl  uppercase">
             Sandwiches
           </h1>
         </div>
       </main>
       {/* Most Popular Items */}
-      <MostPopularItems />
+      <MostPopularItems/>
       <div className="relative">
         {/* Simply Eating Delicious Section */}
         <SimplyEatingDelicious />

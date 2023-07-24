@@ -26,21 +26,21 @@ function MostPopularItems() {
     },
   ];
   return (
-    <div className="">
+    <div className="mt-96 lg:mt-0">
       <div className="text-center flex space-x-3 items-center justify-center font-MetropolisRegular">
-        <span className="text-white text-6xl font-bold uppercase tracking-wide">
+        <span className="text-white  lg:text-6xl text-2xl font-bold uppercase tracking-wide">
           Most
         </span>
         <span className="text-white text-8xl font-normal tracking-widest"></span>
-        <span className="text-mustard font-Hevojniwal text-8xl font-normal tracking-widest">
+        <span className="text-mustard font-Hevojniwal  lg:text-8xl text-5xl font-normal tracking-widest">
           Popular
         </span>
         <span className="text-white text-8xl font-normal tracking-widest"></span>
-        <span className="text-white text-6xl font-bold uppercase tracking-wide">
+        <span className="text-white lg:text-6xl text-2xl font-bold uppercase tracking-wide">
           Items
         </span>
       </div>
-      <div className="flex flex-row space-x-28 items-center justify-center p-24">
+      <div className="flex flex-col lg:flex-row lg:space-x-28 lg:space-y-0 space-y-28 lg:mt-0 mt-4 items-center justify-center p-24">
         {mostPopularItems.map((item) => (
           <MostPopularItemCard
             title={item.title}

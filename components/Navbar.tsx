@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="flex flex-row justify-between relative px-10 pt-12">
+    <div className="flex flex-row-reverse md:flex-row justify-between relative px-10 lg:pt-12 pt-5 ">
       {/* hamburgerMenu */}
       <Link href="menu" className="w-24 mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 inline-flex hover:cursor-pointer">
         <div className="p-1 bg-charcoal rounded-sm flex-col justify-start items-start gap-0.5 inline-flex">
@@ -25,7 +25,7 @@ function Navbar() {
         alt="rounder-logos"
       />
 
-      <div className="w-24 mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 inline-flex">
+      <div className="w-24 hidden mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 md:inline-flex">
         <div className="text-neutral-950 text-xs font-extrabold">Order</div>
         <div className="h-5 p-1 bg-neutral-900 rounded-sm flex-col justify-start items-start gap-0.5 inline-flex">
           <div className="w-6 h-6 relative">
