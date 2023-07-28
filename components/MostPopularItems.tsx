@@ -26,7 +26,7 @@ function MostPopularItems() {
     },
   ];
   return (
-    <div className="mt-96 lg:mt-0">
+    <div className="mt-20 lg:mt-0">
       <div className="text-center flex space-x-3 items-center justify-center font-MetropolisRegular">
         <span className="text-white  lg:text-6xl text-2xl font-bold uppercase tracking-wide">
           Most
@@ -40,7 +40,7 @@ function MostPopularItems() {
           Items
         </span>
       </div>
-      <div className="flex flex-col lg:flex-row lg:space-x-28 lg:space-y-0 space-y-28 lg:mt-0 mt-4 items-center justify-center p-24">
+      <div className="flex  flex-row space-x-6 lg:space-x-28 mt-8 lg:mt-0 items-center justify-center lg:p-24 pt-24 pb-10">
         {mostPopularItems.map((item) => (
           <MostPopularItemCard
             title={item.title}

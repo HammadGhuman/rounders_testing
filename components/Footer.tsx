@@ -3,7 +3,7 @@ import Logo from "@/public/Logo.png";
 import Image from "next/image";
 function Footer() {
   return (
-    <div className="flex flex-row items-center justify-evenly py-8 ">
+    <div className="hidden lg:flex flex-row items-center justify-evenly py-8 ">
       <div className="w-60 h-44 flex-col justify-start items-start gap-14 inline-flex">
         <Image alt="logo" className="w-60 h-24" src={Logo} />
         <div className="text-white text-xl font-medium">2022 @Rounders</div>

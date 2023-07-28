@@ -29,7 +29,8 @@ type Props = {
 
 function CategoriesSelector({ setClicked, clicked }: Props) {
   return (
-    <div className="absolute z-50 -bottom-16 left-[30%] flex space-x-20">
+    // <div className="absolute z-50 -bottom-16 left-[30%] flex space-x-20">
+     <div className="absolute z-50  left-[16%] lg:left-[30%] -bottom-10 lg:-bottom-16 flex justify-center items-center gap-[1.64rem] lg:gap-[5.64rem]"> 
       <div
       className="cursor-pointer"
         onClick={() => {
@@ -42,11 +43,11 @@ function CategoriesSelector({ setClicked, clicked }: Props) {
         }}
       >
         {clicked.pizza ? (
-          <Image src={PizzaClicked} alt="pizza"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={PizzaClicked} alt="pizza"></Image>
         ) : (
-          <Image src={Pizza} alt="pizza"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={Pizza} alt="pizza"></Image>
         )}
-        <p className="text-white text-base font-medium text-center">
+        <p className="text-white text-[0.5rem] mt-1 lg:mt-0 lg:text-base font-medium text-center">
           Tasty Pizza
         </p>
       </div>
@@ -63,11 +64,11 @@ function CategoriesSelector({ setClicked, clicked }: Props) {
         }}
       >
         {clicked.burger ? (
-          <Image src={BurgerClicked} alt="burger"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={BurgerClicked} alt="burger"></Image>
         ) : (
-          <Image src={Burger} alt="burger"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={Burger} alt="burger"></Image>
         )}
-        <p className="text-white text-base font-medium text-center">Burger</p>
+        <p className="text-white text-[0.5rem] mt-1 lg:mt-0 lg:text-base font-medium text-center">Burger</p>
       </div>
       <div
             className="cursor-pointer"
@@ -82,11 +83,11 @@ function CategoriesSelector({ setClicked, clicked }: Props) {
         }}
       >
         {clicked.fries ? (
-          <Image src={FriesClicked} alt="fries"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={FriesClicked} alt="fries"></Image>
         ) : (
-          <Image src={Fries} alt="fries"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={Fries} alt="fries"></Image>
         )}
-        <p className="text-white text-base font-medium text-center">Fries</p>
+        <p className="text-white text-[0.5rem] mt-1 lg:mt-0 lg:text-base font-medium text-center">Fries</p>
       </div>
       <div
             className="cursor-pointer"
@@ -101,11 +102,11 @@ function CategoriesSelector({ setClicked, clicked }: Props) {
         }}
       >
         {clicked.drink ? (
-          <Image src={DrinkClicked} alt="drink"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={DrinkClicked} alt="drink"></Image>
         ) : (
-          <Image src={Drink} alt="drink"></Image>
+          <Image className="w-[3rem] h-[3rem] lg:w-auto lg:h-auto" src={Drink} alt="drink"></Image>
         )}
-        <p className="text-white text-base font-medium text-center">Drink</p>
+        <p className="text-white text-[0.5rem] mt-1 lg:mt-0 lg:text-base font-medium text-center">Drink</p>
       </div>
     </div>
   );
