@@ -8,9 +8,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import * as yup from "yup";
 import RegisterPage from "@/components/RegisterPage";
 import { useMutation } from "@tanstack/react-query";
-import { CustomError, login } from "@/util/AuthFunctions";
-import { useRouter } from "next/navigation";
+import { CustomError, signup } from "@/util/AuthFunctions";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 type Props = {};
 
 interface RegisterFromType {
@@ -35,33 +35,32 @@ function Page({}: Props) {
     resolver: yupResolver(RegisterSchema),
   });
   const router = useRouter();
-  const { mutate, isLoading } = useMutation(login, {
+  const { mutate, isLoading } = useMutation(signup, {
     onSuccess(data, variables, context) {
-      // console.log("🚀 ~ file: page.tsx:40 ~ onSuccess ~ data:", data);
-      if (data?.status == 200) {
-        toast.success("Log in Successfully");
+      console.log("🚀 ~ file: page.tsx:38 ~ onSuccess ~ context:", context);
+      console.log("🚀 ~ file: page.tsx:38 ~ onSuccess ~ variables:", variables);
+      console.log("🚀 ~ file: page.tsx:38 ~ onSuccess ~ data:", data);
+      if (data.status == 200) {
+        toast.success("User Registered Successfully");
         router.push("/");
       }
-      // console.log("🚀 ~ file: page.tsx:40 ~ onSuccess ~ variables:", variables);
-      // console.log("🚀 ~ file: page.tsx:40 ~ onSuccess ~ context:", context);
     },
     onError(error, variables, context) {
-      console.log("🚀 ~ file: page.tsx:49 ~ onError ~ error:", error);
-      console.log("🚀 ~ file: page.tsx:49 ~ onError ~ context:", context);
-      console.log("🚀 ~ file: page.tsx:49 ~ onError ~ variables:", variables);
+      console.log("🚀 ~ file: page.tsx:43 ~ onError ~ context:", context);
+      console.log("🚀 ~ file: page.tsx:43 ~ onError ~ variables:", variables);
+      console.log("🚀 ~ file: page.tsx:43 ~ onError ~ error:", error);
       if (
         error instanceof CustomError &&
         error.details &&
         error.details.status == 400
       ) {
-        toast.error("Invalid Credentials Enter Valid Credential");
+        toast.error(error.details.errorMessage);
       } else {
         toast.error("Something Went Wrong");
       }
     },
   });
-
-  const onSubmitHandler = (data: { email: string; password: string }) => {
+  const onSubmitHandler = (data: any) => {
     console.log(data);
     mutate(data);
     reset();
@@ -112,22 +111,45 @@ function Page({}: Props) {
               <p className="text-custom-red">{errors.password.message}</p>
             )}
           </div>
+          <div className="mt-4">
+            <label
+              htmlFor="phoneNumber"
+              className="leading-7 text-lg text-mustard"
+            >
+              Phone Number
+            </label>
+            <input
+              type="number"
+              id="phoneNumber"
+              {...register("phoneNumber")}
+              required
+              {...register}
+              className="w-full bg-mustard/60 bg-opacity-50 rounded border border-gray-300 focus:border-mustard focus:bg-mustard focus:ring-2 focus:ring-mustard text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+            {errors.phoneNumber && (
+              <p className="text-custom-red">{errors.phoneNumber.message}</p>
+            )}
+          </div>
         </form>
 
         <div className="p-2 w-full">
           <button
             disabled={isLoading}
             onClick={handleSubmit(onSubmitHandler)}
-            className="flex mx-auto text-white bg-mustard border-0 py-2 px-8 focus:outline-none hover:bg-custom-red transition-colors duration-300 f rounded text-lg"
+            className="flex mx-auto text-white bg-mustard border-0 py-2 px-8 focus:outline-none hover:bg-custom-red transition-colors duration-300 rounded text-lg"
           >
-            Log in
+            {isLoading ? (
+              <div className="animate-spin rounded-full border-t-2 border-l-2 border-b-2  border-black  h-10 w-10"></div>
+            ) : (
+              <>Register</>
+            )}
           </button>
         </div>
 
         <p className="text-sm mt-2 text-mustard text-center mb-8 w-full">
-          Don&apos;t have and account?{" "}
-          <Link href="/signup" className="hover:cursor-pointer text-white">
-            SignUp
+          Already have and account?{" "}
+          <Link href="/signin" className="hover:cursor-pointer text-white">
+            SignIn
           </Link>
         </p>
       </div>
