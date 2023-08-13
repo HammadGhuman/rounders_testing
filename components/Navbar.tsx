@@ -9,7 +9,10 @@ function Navbar() {
   return (
     <div className="flex flex-row-reverse md:flex-row justify-between relative px-2 lg:px-10 lg:pt-12 pt-5 ">
       {/* hamburgerMenu */}
-      <Link href="menu" className="w-24 mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 inline-flex hover:cursor-pointer">
+      <Link
+        href="menu"
+        className="w-24 mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 inline-flex hover:cursor-pointer"
+      >
         <div className="p-1 bg-charcoal rounded-sm flex-col justify-start items-start gap-0.5 inline-flex">
           <div className="w-4 h-0.5 bg-mustard rounded-3xl" />
           <div className="w-4 h-0.5 bg-mustard rounded-3xl" />
@@ -20,11 +23,11 @@ function Navbar() {
 
       {/* Company Logo */}
       <Link href="/">
-      <Image
-        className="w-32 h-11 self-center"
-        src={rounderLogo}
-        alt="rounder-logos"
-      />
+        <Image
+          className="w-32 h-11 self-center"
+          src={rounderLogo}
+          alt="rounder-logos"
+        />
       </Link>
 
       <div className="w-24 hidden mt-2 h-8 px-2.5 py-1 bg-mustard rounded-md justify-start items-center gap-2 md:inline-flex">

@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </main>
       {/* Most Popular Items */}
-      <MostPopularItems/>
+      <MostPopularItems />
       <div className="relative">
         {/* Simply Eating Delicious Section */}
         <SimplyEatingDelicious />
@@ -75,7 +75,7 @@ export default function Home() {
         <CategoriesSelector clicked={clicked} setClicked={setClicked} />
         {/* Categories Display Section */}
       </div>
-    <CategoriesDisplay clicked={clicked} />
+      <CategoriesDisplay clicked={clicked} />
       {/* chucking good banner  */}
       <Image src={ChuckingGood} alt="chucking good banner" />
       {/* Offer Page */}
@@ -102,8 +102,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex lg:space-x-32 space-x-10 justify-center py-20 pb-10 lg:pb-32">
-
-        <div className="lg:w-60 lg:h-96 w-[5.28rem] h-[5.28rem] flex-col justify-end items-start gap-3 lg:gap-10 inline-flex">
+          <div className="lg:w-60 lg:h-96 w-[5.28rem] h-[5.28rem] flex-col justify-end items-start gap-3 lg:gap-10 inline-flex">
             <div className="lg:w-60 lg:h-64 w-[5.28rem] h-[5.28rem] relative">
               <Image src={BurgerSpinner} alt="burger-spinner "></Image>
             </div>
@@ -135,7 +134,6 @@ export default function Home() {
             </div>
           </div>
 
-
           <div className="lg:w-60 lg:h-96 w-[5.28rem] h-[5.28rem] flex-col justify-end items-start gap-3 lg:gap-10 inline-flex">
             <div className="lg:w-60 lg:h-64 w-[5.28rem] h-[5.28rem] relative">
               <Image src={BurgerSpinner} alt="burger-spinner "></Image>
@@ -151,8 +149,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
-
         </div>
       </div>
       {/* Register page  */}
