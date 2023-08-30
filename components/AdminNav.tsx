@@ -37,6 +37,33 @@ function AdminNav() {
         >
           Orders
         </Link>
+
+        <Link
+          className={`hover:text-mustard  transition-colors duration-300 ${
+            pathname.split("/")[2] === "item-category" && "text-mustard"
+          } `}
+          href="/admin/item-category"
+        >
+          Item Category
+        </Link>
+
+        <Link
+          className={`hover:text-mustard  transition-colors duration-300 ${
+            pathname.split("/")[2] === "item-sub-category" && "text-mustard"
+          } `}
+          href="/admin/item-sub-category"
+        >
+          Item Sub Category
+        </Link>
+
+        <Link
+          className={`hover:text-mustard  transition-colors duration-300 ${
+            pathname.split("/")[2] === "menu-sub-item" && "text-mustard"
+          } `}
+          href="/admin/menu-sub-item"
+        >
+          Menu Sub Item
+        </Link>
       </div>
     </nav>
   );

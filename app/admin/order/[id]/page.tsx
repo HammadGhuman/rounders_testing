@@ -46,7 +46,7 @@ function Page({
 
   const { mutate, isLoading } = useMutation(updateOrder, {
     onSuccess(data, variables, context) {
-      if (data.status == 201) {
+      if (data.status == 200) {
         toast.success("Order Updated Successfully");
         router.push("/admin/order");
       }
